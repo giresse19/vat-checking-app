@@ -57,20 +57,21 @@ class VatDetails extends React.Component {
               updateDynamicField={updateDynamicField}
               updateCityId={updateCityId}
               getVatDetails={getVatDetails}
-            />
-            <Head>          
-              Server Response
-            </Head>
+            />                    
+            {vatData.Valid 
+             ?  <Head> Yes, the VAT number is Valid.</Head>
+             : <Head> Invalid VAT number, Please check and try again.</Head>
+            }            
         <BodyWrap>
              <Address>Country Code : {vatData.CountryCode}</Address>
              <Description> Request Date : {vatData.RequestDate} </Description>
              <Address> Address : {vatData.Address}</Address>
              <Name> Name : {vatData.Name}</Name>
              <VatNumber>VAT number : {vatData.VATNumber}</VatNumber>
-            {vatData.Name.length > 3 // endpoint doesn't output the value(boolean) for key Valid ... hence need for this 
-            ?  <Name> Valid : {"true"}</Name>
-            : <Name> Valid : {"false"}</Name>
-            }           
+              {vatData.Valid 
+               ?  <Name> Valid : {"true"}</Name>
+               : <Name> Valid : {"false"}</Name>
+              }           
         </BodyWrap>
        </Wrapper> 
          <Button

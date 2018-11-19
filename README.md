@@ -1,10 +1,11 @@
-# Another Weather
+# VAT Validation App
 
 This is a VAT validation application
 with VAT number checked based off Erply API(Endpoint).
 The App also uses the OpenWeatherMap API for 
 dynamic city Search. The City Search anables users to
 to choose a city in the country where the enterprise is located,
+but it's not neccessary to check VAT validation just
 for better user experience.
 
 The project was created using [React Boilerplate](https://github.com/react-boilerplate/react-boilerplate). Check it out.

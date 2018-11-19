@@ -13,6 +13,7 @@ function CityPreview({
   updateCityId,
   getVatDetails,
 }) {
+
   const { id, name, sys} = city;
   return (
     <Wrapper
@@ -46,5 +47,6 @@ CityPreview.propTypes = {
   updateCityId: PropTypes.func,
   getVatDetails: PropTypes.func,
 };
+
 
 export default CityPreview;

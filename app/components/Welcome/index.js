@@ -33,14 +33,15 @@ function Welcome({
     <Wrapper>
       <CenteringContainer maxWidth="700">
         <Title>VAT Validation App</Title>
-        <Instructions>
-          <p>
-            This is a VAT validation application
-            with VAT number checked based off Erply API(Endpoint).
-            The App also uses the OpenWeatherMap API for 
-            dynamic city Search. The City Search anables users
-            to choose a city in the country where the enterprise 
-            who{'s'} VAT is being checked is located, for better user experience.
+        <Instructions>          
+          <p> {/* city field not required for VAT validation... just for better UX */}
+            This is a VAT validation application.
+            It performs VAT number checked based-off Erply'{"s"} API(Endpoint).
+            The App also uses the OpenWeatherMap API for  dynamic city Search.
+            The city field is NOT REQUIRED for fetching data about the VAT details.
+            However, the Search anables users to choose a city in 
+            the country where the enterprise who'{'s'} VAT is
+            being checked, is located, for better user experience.
           </p>
           <p>
             The dynamic search provided by OpenWeatherMap can be checked here{' '}
@@ -74,7 +75,7 @@ function Welcome({
           <Button
             text="Search"  
             onClick={() => {
-              if (VATnumber && city && cityId) {             
+              if (VATnumber) {             
                 historyPush('/vatdetails');
               } else if (VATnumber && city) {
                 alert('Please, choose the city from the dropdown.');
