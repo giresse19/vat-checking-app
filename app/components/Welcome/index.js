@@ -36,7 +36,7 @@ function Welcome({
         <Instructions>          
           <p> {/* city field not required for VAT validation... just for better UX */}
             This is a VAT validation application.
-            It performs VAT number checked based-off Erply'{"s"} API(Endpoint).
+            It performs VAT number check based-off Erply'{"s"} API(Endpoint).
             The App also uses the OpenWeatherMap API for  dynamic city Search.
             The city field is NOT REQUIRED for fetching data about the VAT details.
             However, the Search anables users to choose a city in 
@@ -78,7 +78,7 @@ function Welcome({
               if (VATnumber) {             
                 historyPush('/vatdetails');
               } else if (VATnumber && city) {
-                alert('Please, choose the city from the dropdown.');
+                alert('Please, Enter VAT number.');
               } else {
                 alert('Please, fill out all the fields.');
               }
