@@ -10,19 +10,18 @@ import PropTypes from 'prop-types';
 import Header from 'components/Header';
 import Loading from 'components/01-ui/Loading';
 import CenteringContainer from 'components/01-ui/CenteringContainer';
+import Button from 'components/01-ui/Button';
+
 import Description from './styled/Description';
 import Address from './styled/Address';
 import Wrapper from './styled/Wrapper';
 import Head from './styled/Head';
 import BodyWrap from './styled/BodyWrap';
 import Name from './styled/Name';
-import VatNumber from './styled/VatNumber'
-import MainWrap from './styled/MainWrap'
-import Button from 'components/01-ui/Button';
-
+import VatNumber from './styled/VatNumber';
+import MainWrap from './styled/MainWrap';
 
 class VatDetails extends React.Component {
-
   componentDidMount() {  
     if (this.props.fields.VATnumber) {
       this.props.getVatDetails(this.props.fields.VATnumber);
@@ -44,10 +43,10 @@ class VatDetails extends React.Component {
       getVatDetails,
     } = this.props;
  
-    if (vatData) {
-      return (
-        <MainWrap>
-        <CenteringContainer>
+ if (vatData) {
+  return (
+    <MainWrap>
+      <CenteringContainer>
           <Wrapper>
             <Header
               fields={fields}
@@ -62,28 +61,28 @@ class VatDetails extends React.Component {
             <Head>          
               Server Response
             </Head>
-        < BodyWrap>
+        <BodyWrap>
              <Address>Country Code : {vatData.CountryCode}</Address>
              <Description> Request Date : {vatData.RequestDate} </Description>
              <Address> Address : {vatData.Address}</Address>
              <Name> Name : {vatData.Name}</Name>
              <VatNumber>VAT number : {vatData.VATNumber}</VatNumber>
-            {vatData.Name.length > 3
+            {vatData.Name.length > 3 // endpoint doesn't output the value(boolean) for key Valid ... hence need for this 
             ?  <Name> Valid : {"true"}</Name>
             : <Name> Valid : {"false"}</Name>
             }           
         </BodyWrap>
        </Wrapper> 
-       <Button
+         <Button
             text="Back"
             onClick={() => {
               this.props.history.push('/welcome');
             }}
           />
       </CenteringContainer>
-      </MainWrap>
-      );
-    }
+    </MainWrap>
+    );
+  }
     return <Loading />;
   }
 }

@@ -20,7 +20,7 @@ import {
 export const initialState = fromJS({
   cityId: null,
   fields: {
-    VATnumber: 'EE100247019',   
+    VATnumber: 'EE100247019',   //Used default testing ID provided for convenience.. can be changed/be empty string ofcourse 
     city: '',   
   },
   searched: [],
