@@ -43,7 +43,7 @@ export function* fetchVatDetails(action) {
       axios.get,
       `${BASE_URL_VAT}/numbers?vatNumber=${action.fieldName}`,
     );
-    console.log('hello world!', vatDetails);
+
     yield put(stopFetching());
     yield put(
       receiveVatDetails({
