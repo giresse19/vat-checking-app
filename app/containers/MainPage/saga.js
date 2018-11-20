@@ -41,15 +41,13 @@ export function* fetchVatDetails(action) {
     yield put(startFetching());
     const vatDetails = yield call(
       axios.get,
-      `${BASE_URL_VAT}/numbers?vatNumber=${
-        action.fieldName
-      }`,
+      `${BASE_URL_VAT}/numbers?vatNumber=${action.fieldName}`,
     );
-    console.log("hello world!", vatDetails);
+    console.log('hello world!', vatDetails);
     yield put(stopFetching());
     yield put(
       receiveVatDetails({
-        vatData: vatDetails.data,     
+        vatData: vatDetails.data,
       }),
     );
   } catch (error) {
@@ -61,6 +59,6 @@ export function* fetchVatDetails(action) {
 export default function* watcher() {
   yield [
     takeLatest(FIND_CITY, fetchSearched),
-    takeLatest(GET_VATDETAILS, fetchVatDetails),  
+    takeLatest(GET_VATDETAILS, fetchVatDetails),
   ];
 }

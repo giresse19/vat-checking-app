@@ -42,7 +42,6 @@ function Loading() {
                 begin="0s"
                 repeatCount="indefinite"
               />
-              
             </circle>
           </g>
         </g>

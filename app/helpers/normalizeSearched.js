@@ -1,5 +1,4 @@
-
-/* // OpenWeather API can give you cities with the same ID.
+// OpenWeather API can give you cities with the same ID.
 // It's obviously not what we want. */
 export default function normalizeSearched(list) {
   const result = [];

@@ -20,7 +20,7 @@ import makeSelectMainPage from './selectors';
 import saga from './saga';
 
 import {
-  findCity,  
+  findCity,
   getVatDetails,
   updateField,
   updateTimer,
@@ -50,7 +50,6 @@ export class MainPage extends React.Component {
     );
   }
 
-  
   render() {
     const {
       fields,
@@ -73,7 +72,7 @@ export class MainPage extends React.Component {
               updateField={this.props.updateField}
               updateDynamicField={this.updateDynamicField}
               updateCityId={this.props.updateCityId}
-              historyPush={this.props.history.push}            
+              historyPush={this.props.history.push}
               {...props}
             />
           )}
@@ -95,7 +94,6 @@ export class MainPage extends React.Component {
             />
           )}
         />
-
       </Switch>
     );
   }
@@ -130,9 +128,9 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     findCity: query => dispatch(findCity(query)),
-    getVatDetails: fieldName => dispatch(getVatDetails(fieldName)),    
+    getVatDetails: fieldName => dispatch(getVatDetails(fieldName)),
     updateField: (fieldName, query) =>
-    dispatch(updateField(fieldName, query)),
+      dispatch(updateField(fieldName, query)),
     updateTimer: timer => dispatch(updateTimer(timer)),
     updateCityId: id => dispatch(updateCityId(id)),
   };

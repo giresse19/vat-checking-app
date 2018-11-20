@@ -22,7 +22,7 @@ function Header({
   cityId,
   updateField,
   updateDynamicField,
-  updateCityId, 
+  updateCityId,
   getVatDetails,
 }) {
   return (
@@ -30,11 +30,9 @@ function Header({
       <CenteringContainer>
         <LeftColumn>
           <Link to="/welcome">
-            <LogoH1>
-              ERPLY
-            </LogoH1>
+            <LogoH1>ERPLY</LogoH1>
           </Link>
-         </LeftColumn>
+        </LeftColumn>
         <DynamicInputField
           name="city"
           value={fields.city}
@@ -43,7 +41,7 @@ function Header({
           cityId={cityId}
           updateField={updateField}
           updateDynamicField={updateDynamicField}
-          updateCityId={updateCityId}  
+          updateCityId={updateCityId}
           getVatDetails={getVatDetails}
         />
       </CenteringContainer>
@@ -62,7 +60,7 @@ Header.propTypes = {
   updateField: PropTypes.func,
   updateDynamicField: PropTypes.func,
   updateCityId: PropTypes.func,
-  getVatDetails: PropTypes.func
+  getVatDetails: PropTypes.func,
 };
 
 export default Header;

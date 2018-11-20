@@ -33,29 +33,32 @@ function Welcome({
     <Wrapper>
       <CenteringContainer maxWidth="700">
         <Title>VAT Validation App</Title>
-        <Instructions>          
-          <p> {/* city field not required for VAT validation... just for better UX */}
-            This is a VAT validation application.
-            It performs VAT number check based-off Erply'{"s"} API(Endpoint).
-            The App also uses the OpenWeatherMap API for  dynamic city Search.
-            The city field is NOT REQUIRED for fetching data about the VAT details.
-            However, the Search anables users to choose a city in 
-            the country where the enterprise who'{'s'} VAT is
+        <Instructions>
+          <p>
+            {' '}
+            {/* city field not required for VAT validation... just for better UX */}
+            This is a VAT validation application. It performs VAT
+            number check based-off {`Erply's`} API(Endpoint). The App
+            also uses the OpenWeatherMap API for dynamic city Search.
+            The city field is NOT REQUIRED for fetching data about the
+            VAT details. However, the Search anables users to choose a
+            city in the country where the enterprise {`who's`} VAT is
             being checked, is located, for better user experience.
           </p>
           <p>
-            The dynamic search provided by OpenWeatherMap can be checked here{' '}
+            The dynamic search provided by OpenWeatherMap can be
+            checked here{' '}
             <NestedLink href="https://openweathermap.org/find">
               (external link)
             </NestedLink>{' '}
           </p>
           <p>
-            Try typing the full name of the city, where the company is located.
+            Try typing the full name of the city, where the company is
+            located.
           </p>
         </Instructions>
         <Fields>
-        
-        <DynamicInputField
+          <DynamicInputField
             name="city"
             value={city}
             searched={searched}
@@ -65,17 +68,17 @@ function Welcome({
             updateDynamicField={updateDynamicField}
             updateCityId={updateCityId}
           />
-          
-        <InputField
+
+          <InputField
             name="VATnumber"
             value={VATnumber}
             updateField={updateField}
-          />   
+          />
 
           <Button
-            text="Search"  
+            text="Search"
             onClick={() => {
-              if (VATnumber) {             
+              if (VATnumber) {
                 historyPush('/vatdetails');
               } else if (VATnumber && city) {
                 alert('Please, Enter VAT number.');
