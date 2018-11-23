@@ -20,7 +20,7 @@ import BodyWrap from './styled/BodyWrap';
 import Name from './styled/Name';
 import VatNumber from './styled/VatNumber';
 import MainWrap from './styled/MainWrap';
-import PreviewWrapper from './styled/CityPreviewWrapper';
+// import PreviewWrapper from './styled/CityPreviewWrapper';
 
 class VatDetails extends React.Component {
   componentDidMount() {
@@ -43,90 +43,60 @@ class VatDetails extends React.Component {
       updateCityId,
       getVatDetails,
     } = this.props;
-    if (fetching) {
-      if (vatData) {
-        return (
-          <MainWrap>
-            <CenteringContainer>
-              <Wrapper>
-                <Header
-                  fields={fields}
-                  searched={searched}
-                  fetching={fetching}
-                  cityId={cityId}
-                  updateField={updateField}
-                  updateDynamicField={updateDynamicField}
-                  updateCityId={updateCityId}
-                  getVatDetails={getVatDetails}
-                />
-                {vatData.Valid ? (
-                  <Head> Yes, the VAT number is Valid.</Head>
-                ) : (
-                  <Head>
-                    {' '}
-                    Invalid VAT number, Please check and try again.
-                  </Head>
-                )}
-                <BodyWrap>
-                  <Address>
-                    Country Code : {vatData.CountryCode}
-                  </Address>
-                  <Description>
-                    {' '}
-                    Request Date : {vatData.RequestDate}{' '}
-                  </Description>
-                  <Address> Address : {vatData.Address}</Address>
-                  <Name> Name : {vatData.Name}</Name>
-                  <VatNumber>
-                    VAT number : {vatData.VATNumber}
-                  </VatNumber>
-                  {vatData.Valid ? (
-                    <Name> Valid : {'true'}</Name>
-                  ) : (
-                    <Name> Valid : {'false'}</Name>
-                  )}
-                </BodyWrap>
-              </Wrapper>
-              <Button
-                text="Back"
-                onClick={() => {
-                  this.props.history.push('/welcome');
-                }}
+    if (vatData) {
+      return (
+        <MainWrap>
+          <CenteringContainer>
+            <Wrapper>
+              <Header
+                fields={fields}
+                searched={searched}
+                fetching={fetching}
+                cityId={cityId}
+                updateField={updateField}
+                updateDynamicField={updateDynamicField}
+                updateCityId={updateCityId}
+                getVatDetails={getVatDetails}
               />
-            </CenteringContainer>
-          </MainWrap>
-        );
-      }
-      return <Loading />;
-    }
-    return (
-      <MainWrap>
-        <CenteringContainer>
-          <Wrapper>
-            <Header
-              fields={fields}
-              searched={searched}
-              fetching={fetching}
-              cityId={cityId}
-              updateField={updateField}
-              updateDynamicField={updateDynamicField}
-              updateCityId={updateCityId}
-              getVatDetails={getVatDetails}
+              {vatData.Valid ? (
+                <Head> Yes, the VAT number is Valid.</Head>
+              ) : (
+                <Head>
+                  {' '}
+                  Invalid VAT number, Please check and try again.
+                </Head>
+              )}
+              <BodyWrap>
+                <Address>
+                  Country Code : {vatData.CountryCode}
+                </Address>
+                <Description>
+                  {' '}
+                  Request Date : {vatData.RequestDate}{' '}
+                </Description>
+                <Address> Address : {vatData.Address}</Address>
+                <Name> Name : {vatData.Name}</Name>
+                <VatNumber>
+                  VAT number : {vatData.VATNumber}
+                </VatNumber>
+                {vatData.Valid ? (
+                  <Name> Valid : {'true'}</Name>
+                ) : (
+                  <Name> Valid : {'false'}</Name>
+                )}
+              </BodyWrap>
+            </Wrapper>
+            <Button
+              text="Back"
+              onClick={() => {
+                this.props.history.push('/welcome');
+              }}
             />
-            <PreviewWrapper>
-              Connection to Server not possible at the moment. Please
-              try again later
-            </PreviewWrapper>
-          </Wrapper>
-          <Button
-            text="Back"
-            onClick={() => {
-              this.props.history.push('/welcome');
-            }}
-          />
-        </CenteringContainer>
-      </MainWrap>
-    );
+          </CenteringContainer>
+        </MainWrap>
+      );
+    }
+    return <Loading />;
   }
 }
 
