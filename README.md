@@ -1,4 +1,5 @@
 # VAT Validation App
+App can be located here: forgetful-vein.surge.sh
 
 This is a VAT validation application
 with VAT number checked based off Erply API(Endpoint).
@@ -11,7 +12,6 @@ for better user experience.
 The project was created using [React Boilerplate](https://github.com/react-boilerplate/react-boilerplate). Check it out.
 
 ## Features
-
 - Based on Erply's Endpoint for VAT validation check:
 - Used OpenWeatherMap API
 - Dynamic city search
